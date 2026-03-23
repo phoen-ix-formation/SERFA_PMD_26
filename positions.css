@@ -60,3 +60,15 @@
     top: 60px;
     background-color: #f5e6aa;
 }
+
+/* Partie 3 - Positionnement absolu */
+#exemple_absolu {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    background-color: #f5aaaa;
+}
+
+#conteneur_relatif {
+    position: relative;
+}
