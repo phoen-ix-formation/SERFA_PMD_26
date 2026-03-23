@@ -1,3 +1,7 @@
+:root {
+    --absolute-space: 10px;
+}
+
 /* Remise à zéro */
 * {
     margin: 0;
@@ -71,4 +75,55 @@
 
 #conteneur_relatif {
     position: relative;
+}
+
+#ex31_a, #ex31_b, #ex31_c {
+    position: absolute;
+}
+
+#ex31_a {
+    background-color: #f5c6aa;
+    top: 0;
+    left: 0;
+}
+
+#ex31_b {
+    background-color: #aaf5c6;
+    top: 0; 
+    left: 350px;
+}
+
+#ex31_c {
+    background-color: #c6aaf5;
+    top: 0;
+    right: 0;
+}
+
+#ex32_conteneur {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    background-color: #ddd;
+    border: 2px solid black;
+}
+
+#ex32_titre {
+    position: absolute;
+    top: var(--absolute-space);
+    left: var(--absolute-space);
+    background-color: #f5aaaa;
+}
+
+#ex32_bouton {
+    position: absolute;
+    bottom: var(--absolute-space);
+    right: var(--absolute-space);
+    background-color: #aaf5aa;
+}
+
+#ex32_etiquette {
+    position: absolute;
+    bottom: var(--absolute-space);
+    left: var(--absolute-space);
+    background-color: #aaaaff;
 }
