@@ -30,3 +30,11 @@
     position: static; /*< Ne change rien à l'affichage */
 }
 
+/* Partie 2 - Relatif */
+#exemple_relatif {
+    position: relative;
+    top: 25px;
+    left: 40px;
+    background-color: #aad4f5;
+}
+
