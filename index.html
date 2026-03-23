@@ -116,7 +116,7 @@
                 <div class="zbloc z_vert">Bloc vert (dans le code en 3ème)</div>
             </div>
         </div>
-        
+
         <div class="exercice">
             <h2>Partie 5.2 — Chevauchement avec z-index</h2>
 
@@ -124,6 +124,35 @@
                 <div class="zbloc z_rouge2">Bloc rouge (z-index:3)</div>
                 <div class="zbloc z_bleu2">Bloc bleu (z-index:1)</div>
                 <div class="zbloc z_vert2">Bloc vert (z-index:2)</div>
+            </div>
+        </div>
+
+        <div class="exercice">
+            <h2>Exercice 5.1 — Classer avec z-index</h2>
+
+            <p>Sans z-index :</p>
+            <div class="ex51_conteneur" id="ex51_sans">
+                <div class="ex51_bloc ex51_a">A</div>
+                <div class="ex51_bloc ex51_b">B</div>
+                <div class="ex51_bloc ex51_c">C</div>
+                <div class="ex51_bloc ex51_d">D</div>
+            </div>
+
+            <p>Avec z-index (B > D > C > A) :</p>
+            <div class="ex51_conteneur" id="ex51_avec">
+                <div class="ex51_bloc ex51_a">A</div>
+                <div class="ex51_bloc ex51_b">B</div>
+                <div class="ex51_bloc ex51_c">C</div>
+                <div class="ex51_bloc ex51_d">D</div>
+            </div>
+        </div>
+
+        <div class="exercice">
+            <h2>Exercice 5.2 - Z-index négatif</h2>
+
+            <div class="boite" id="ex52_conteneur">
+                <p>Je suis le texte normal du conteneur.</p>
+                <div class="boite" id="ex52_derriere">Je suis censé passer derrière</div>
             </div>
         </div>
     </body>
