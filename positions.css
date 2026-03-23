@@ -1,0 +1,26 @@
+/* Remise à zéro */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles communs à tous les exemples et exercices */
+.exercice {
+    width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.exercice h2 {
+    background-color:  #333;
+    color: white;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.boite {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #eee;
+}
