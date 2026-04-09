@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #DDD;
+    padding: 10px;    
+    outline: none; /* Retirer le cadre lors du focus */
+}
+
+.input-group label {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: #999;
+    pointer-events: none;
+    /* À COMPLÉTER : transition */
+    transition: all 0.3s ease;
+}
+
+/* État focus ou rempli */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+
+    /* À COMPLÉTER : label vers le haut */
+    top: -10px;
+    font-size: 12px;
+    color: #667eea;
+}
+
+.input-group input:focus {
+    
+    /* À COMPLÉTER : bordure colorée */
+    border-bottom-color: #667eea;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    /* À COMPLÉTER : transition */
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #5568d3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
