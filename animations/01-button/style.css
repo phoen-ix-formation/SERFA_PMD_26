@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center; /* Alignement vertical */
+    justify-content: center; /* Alignement horizontal */
+    gap: 10px;
+    flex-direction: row; /* column ou row */
+}
+
+button {
+    all: unset;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    transition: background-color 1s ease;
+}
+
+/* button:nth-of-type(1) { cible le 1er */
+button:nth-of-type(odd) { /* Cible les impaires */
+    background-color: #3498db;
+}
+
+button:nth-of-type(odd):hover {
+    background-color: #2ecc71;
+}
+
+button:nth-of-type(even) { /* Cible les paires */
+    background-color: #2ecc71;
+}
+
+button:nth-of-type(even):hover {
+    background-color: #3498db;
+}
