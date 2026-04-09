@@ -1,0 +1,62 @@
+/*
+    Tips : 
+        Déplacer des éléments
+        transform: translateX(...)
+        
+        Décaler des animations dans le temps
+        transition-delay: ...s
+        animation-delay: ...s
+*/
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center; /* Alignement vertical */
+    justify-content: center; /* Alignement horizontal */
+    background-color: #8e8e8e;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+/* 
+    Création d'une animation de slide
+    On part de -50px vers la gauche + opacité à 0%
+    Pour arriver à la position normale (0) et une opacité 100%
+ */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+ul {
+    list-style: none; /* Retire les puces de la liste */
+    margin: 0;        /* Reset des marges pour partir de zero */
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    margin: 10px 0;
+    opacity: 0;
+
+    /* Appel ma keyframes sur une durée de 0.5s et on conserve l'état final =  forwards */
+    animation: slideIn 0.5s ease forwards;
+}
+
+/* 
+    On décale les animations dans le temps, le 1er au début, 
+    on décale de 200ms le second, 
+    de 200ms de plus le suivant et ainsi de suite 
+ */
+li:nth-child(1) { animation-delay: 0; }
+li:nth-child(2) { animation-delay: 0.2s; }
+li:nth-child(3) { animation-delay: 0.4s; }
+li:nth-child(4) { animation-delay: 0.6s; }
+li:nth-child(5) { animation-delay: 0.8s; }
