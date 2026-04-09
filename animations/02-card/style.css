@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center; /* Alignement vertical */
+    justify-content: center; /* Alignement horizontal */
+    background-color: #ececec;
+}
+
+div {
+    width: 20rem;    
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+
+    /* décalage en X, décalage en Y, taille, couleur */
+    /* rgba = couleur R-G-B + opacité de 0 à 1 = 0% à 100% */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+    /* Une transition sur plusieurs propriétés */
+    transition: transform 0.5s ease,
+                box-shadow 0.5s ease;
+}
+
+div:hover {
+    transform: scale(1.05); /* Zoom > 1 ; < 1 dézoom */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
