@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #764ba2;
+    flex-direction: column;
+}
+
+.param {
+    margin-top: 2rem;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.loader {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    /* À COMPLÉTER : animation avec délais différents */
+}
+
+.dot:nth-child(1) { /* délai 0s */ }
+.dot:nth-child(2) { /* délai 0.15s */ }
+.dot:nth-child(3) { /* délai 0.3s */ }
+
+/* À COMPLÉTER : @keyframes bounce */
+@keyframes bounce {
+    
+}
