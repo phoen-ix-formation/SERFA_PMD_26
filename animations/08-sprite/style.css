@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #ecf0f1;
+    font-family: Arial, sans-serif;
+}
+
+.sprite {
+    background: url('sprite.png');
+    height: 64px;
+    width: 64px;
+
+    animation: play 1s steps(6) infinite;
+}
+
+@keyframes play {
+    /* COMPLETER : animation background-position */
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -384px 0;
+    }
+}
