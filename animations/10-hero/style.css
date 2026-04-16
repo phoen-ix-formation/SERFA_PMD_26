@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    overflow-x: hidden;
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    /* À COMPLÉTER : animation depuis la gauche */
+    animation: slideInLeft 0.5s ease both; /* both => appliquer l'état initial de la keyframe avant le début de l'animation et de conserver l'état final après l'animation */
+
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    /* À COMPLÉTER : animation depuis la droite */
+    animation: slideInRight 0.5s ease 0.3s both;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: white;
+    color: #667eea;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    /* À COMPLÉTER : animation depuis le bas */
+    animation: slideInUp 0.5s ease 0.5s both;
+}
+
+.hero-image {
+    /* À COMPLÉTER : animation fade + rotation */
+    animation: fadeInRotate 1s ease-out 0.9s both;
+}
+
+/* À COMPLÉTER : @keyframes */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-200px); /* Etat initial : 200px vers la gauche */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Etat final : emplacement prévu */
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(200px); /* Etat initial : 200px vers la droite */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Etat final : emplacement prévu */
+    }    
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Etat initial : 200px vers la bas */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Etat final : emplacement prévu */
+    }    
+}
+
+@keyframes fadeInRotate {
+    from {
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    } 
+    
+}
