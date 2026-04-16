@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: Arial, sans-serif;
+}
+
+.card-container {
+    width: 300px;
+    height: 400px;
+    perspective: 2000px; /* Joue avec la perspective: l'arrière semble plus lointains */
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* À COMPLÉTER : transform-style et transition */
+    transition: transform 1s;
+    transform-style: preserve-3d; /* Permet lors de la transformation (rotation) de masquer ce qui était affiché et d'afficher ce qui était masqué */
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Cache le dos */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.card-front {
+    background: white;
+}
+
+.card-back {
+    background: #2c3e50;
+    color: white;
+    /* À COMPLÉTER : rotation initiale 180deg */
+    transform: rotateY(180deg);
+}
+
+h3 {
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2ecc71;
+    margin: 20px 0;
+}
+
+.btn {
+    background: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
