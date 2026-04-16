@@ -101,23 +101,23 @@
             </div>
         </section>
 
-        <section id="section-accordion" >
-            <h2 >FAQ</h2>
+        <section id="section-accordion" class="mb-5 pb-4 border-bottom">
+            <h2 class="fw-bold my-4 pb-2 text-center">FAQ</h2>
 
-            <div >
+            <div class="accordion" id="faqAccordion">
 
                 <!-- ouvert par défaut -->
-                <div >
-                    <h2 >
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
                         
                         <!-- accordion-button SANS "collapsed" = affiché ouvert -->
-                        <button >
+                        <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
                             C'est quoi Bootstrap ?
                         </button>
                     </h2>
                     <!-- "show" = ouvert par défaut -->
-                    <div id="faq1" >
-                        <div >
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
                             Bootstrap est un framework CSS open-source créé par Twitter en 2011. Il fournit un système
                             de grille responsive, des composants UI pré-stylés (boutons, navbar, modales...) et des
                             utilitaires CSS, permettant de créer rapidement des interfaces web professionnelles.
@@ -125,16 +125,16 @@
                     </div>
                 </div>
 
-                <div >
-                    <h2 >
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
                         <!-- "collapsed" = classe du bouton quand le panel est fermé -->
-                        <button >
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
                             Bootstrap vs Tailwind CSS : quelle différence ?
                         </button>
                     </h2>
                     <!-- Pas de "show" = fermé par défaut | data-bs-parent = ferme les autres à l'ouverture -->
-                    <div id="faq2" >
-                        <div >
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
                             <strong>Bootstrap</strong> propose des composants prêts à l'emploi (navbar, cards...) avec
                             un design prédéfini.
                             <strong>Tailwind</strong> est utility-first : chaque propriété CSS est une classe, vous
@@ -145,14 +145,14 @@
                     </div>
                 </div>
 
-                <div >
-                    <h2 >
-                        <button >
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
                             Comment personnaliser les couleurs de Bootstrap ?
                         </button>
                     </h2>
-                    <div id="faq3" >
-                        <div >
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
                             Plusieurs approches : 1) Variables CSS custom (<code>--bs-primary: #votreCouleur</code> dans
                             votre CSS), 2) Compilation SASS en surchargeant les variables Bootstrap, 3) Utiliser
                             <code>data-bs-theme</code> pour le mode clair/sombre. La méthode SASS est la plus robuste
@@ -161,14 +161,14 @@
                     </div>
                 </div>
 
-                <div >
-                    <h2 >
-                        <button >
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
                             Bootstrap est-il gratuit ?
                         </button>
                     </h2>
-                    <div id="faq4" >
-                        <div >
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
                             Oui, Bootstrap est entièrement gratuit et open-source, sous licence MIT. Vous pouvez
                             l'utiliser dans vos projets personnels et commerciaux sans restriction. Il existe des thèmes
                             et templates premium payants basés sur Bootstrap, mais le framework lui-même est libre.
