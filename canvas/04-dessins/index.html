@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas - Zone de dessin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Zone de dessin</h1>
+
+    <div class="toolbar">
+
+        <!-- Sélection de l'outil -->
+        <div class="tool-group">
+            <label>Outil :</label>
+            <button id="btnPen" class="active">Stylo</button>
+            <button id="btnEraser">Gomme</button>
+        </div>
+
+        <!-- Couleur -->
+        <div class="tool-group">
+            <label for="colorInput">Couleur :</label>
+            <input type="color" id="colorInput" value="#000000">
+        </div>
+
+        <!-- Taille du stylo -->
+        <div class="tool-group">
+            <label for="penSize">Stylo :</label>
+            <input type="range" id="penSize" min="1" max="50" value="5">
+            <span id="penSizeValue">5px</span>
+        </div>
+
+        <!-- Taille de la gomme -->
+        <div class="tool-group">
+            <label for="eraserSize">Gomme :</label>
+            <input type="range" id="eraserSize" min="5" max="100" value="20">
+            <span id="eraserSizeValue">20px</span>
+        </div>
+
+        <!-- Effacer tout -->
+        <button id="btnClear" class="danger">Tout effacer</button>
+    </div>
+
+    <canvas id="canvas" width="900" height="500"></canvas>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
