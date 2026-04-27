@@ -2,6 +2,11 @@
 const elCanvas = document.getElementById('canvas');
 const ctx = elCanvas.getContext('2d');
 
+// Champs de personnalisation du stylo / gomme
+const elColorInput      = document.getElementById('colorInput');
+const elPenSizeInput    = document.getElementById('penSize');
+const elEraserSizeInput = document.getElementById('eraserSize');
+
 let intLastMouseX = 0;
 let intLastMouseY = 0;
 
@@ -22,7 +27,10 @@ elCanvas.addEventListener('mousemove', (e) => {
         const intMouseY = e.clientY - posCanvas.top;
 
         ctx.beginPath();
-        ctx.strokeStyle = "black";
+
+        // Récupère de manière dynamique l'épaisseur et la couleur
+        ctx.strokeStyle = elColorInput.value;
+        ctx.lineWidth = elPenSizeInput.value;
 
         ctx.moveTo(intLastMouseX, intLastMouseY);
         ctx.lineTo(intMouseX, intMouseY);
@@ -61,5 +69,5 @@ elCanvas.addEventListener('mouseup', (e) => {
 
 // Lors du clic sur le bouton reset
 document.getElementById('btnClear').addEventListener('click', (e) => {
-
+    ctx.clearRect(0, 0, elCanvas.width, elCanvas.height);
 })
