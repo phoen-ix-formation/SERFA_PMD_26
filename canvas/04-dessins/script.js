@@ -12,6 +12,8 @@ let intLastMouseY = 0;
 
 let blIsDrawing = false; //< Stocke l'état : en dessin ou non
 
+let strCurrentTool = 'pen'; //< Stylo = 'pen', Gomme = 'eraser'
+
 // Ecoute des évènements de la souris
 // La souris se déplace dans le canvas
 elCanvas.addEventListener('mousemove', (e) => {
@@ -70,4 +72,20 @@ elCanvas.addEventListener('mouseup', (e) => {
 // Lors du clic sur le bouton reset
 document.getElementById('btnClear').addEventListener('click', (e) => {
     ctx.clearRect(0, 0, elCanvas.width, elCanvas.height);
-})
+});
+
+// On récupère le bon outil (style / gomme)
+const elBtnPen = document.getElementById('btnPen');
+const elBtnEraser = document.getElementById('btnEraser');
+
+elBtnPen.addEventListener('click', (e) => {
+    strCurrentTool = 'pen';
+    elBtnPen.classList.toggle('active');
+    elBtnEraser.classList.toggle('active');
+});
+
+elBtnEraser.addEventListener('click', (e) => {
+    strCurrentTool = 'eraser';
+    elBtnPen.classList.toggle('active');
+    elBtnEraser.classList.toggle('active');
+});
