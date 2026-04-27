@@ -19,7 +19,6 @@ let strCurrentTool = 'pen'; //< Stylo = 'pen', Gomme = 'eraser'
 elCanvas.addEventListener('mousemove', (e) => {
 
     if(blIsDrawing) {
-        // On calcule la position relative de la souris dans le canvas
 
         // 1. on récupère la position du canvas à l'écran
         const posCanvas = elCanvas.getBoundingClientRect();
@@ -27,17 +26,25 @@ elCanvas.addEventListener('mousemove', (e) => {
         // 2. On soustrait la position du canvas à la position de la souris dans l'écran
         const intMouseX = e.clientX - posCanvas.left;
         const intMouseY = e.clientY - posCanvas.top;
-
-        ctx.beginPath();
-
-        // Récupère de manière dynamique l'épaisseur et la couleur
-        ctx.strokeStyle = elColorInput.value;
-        ctx.lineWidth = elPenSizeInput.value;
-
-        ctx.moveTo(intLastMouseX, intLastMouseY);
-        ctx.lineTo(intMouseX, intMouseY);
         
-        ctx.stroke();
+        if(strCurrentTool === 'pen') {
+
+            ctx.beginPath();
+
+            // Récupère de manière dynamique l'épaisseur et la couleur
+            ctx.strokeStyle = elColorInput.value;
+            ctx.lineWidth = elPenSizeInput.value;
+
+            ctx.moveTo(intLastMouseX, intLastMouseY);
+            ctx.lineTo(intMouseX, intMouseY);
+            
+            ctx.stroke();
+        }
+        else if(strCurrentTool === 'eraser') {
+
+            ctx.clearRect(intMouseX, intMouseY, 
+                elEraserSizeInput.value, elEraserSizeInput.value);
+        }
 
         intLastMouseX = intMouseX;
         intLastMouseY = intMouseY;
