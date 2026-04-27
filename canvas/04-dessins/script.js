@@ -31,6 +31,10 @@ elCanvas.addEventListener('mousemove', (e) => {
 
             ctx.beginPath();
 
+            // Bords arrondis
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
             // Récupère de manière dynamique l'épaisseur et la couleur
             ctx.strokeStyle = elColorInput.value;
             ctx.lineWidth = elPenSizeInput.value;
