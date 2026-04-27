@@ -23,17 +23,25 @@ ctx.fillRect(100, 200, 200, 100);
 
 // Première case, en haut à gauche
 
-// j => l'incrément en Y
-for(let j = 0; j <= intCanvasHeight; j++) {
+
 
     // lignes paires => première case noire
     // lignes impaires => en blanc
     // nombre % 2 == 0 => pair
     // nombre % 2 != 0 => impair
 
+// j => l'incrément en Y
+const intCellHeight = 50; // Hauteur d'une case
+const intCellWidth  = 50; // Largeur d'une case
+
+const intLinesNbr   = intCanvasHeight / intCellHeight; // Nbre de lignes au total
+const intColmsNbr   = intCanvasWidth / intCellWidth; // Nbr de colonnes par ligne
+
+for(let j = 0; j < intLinesNbr; j++) {
+
     if(j % 2 == 0) {
         // Ligne paires
-
+        /*
         ctx.fillStyle = 'black';
         // i => l'incrément en X
         for(let i = 0; i <= intCanvasWidth; i += 100) {
@@ -43,20 +51,35 @@ for(let j = 0; j <= intCanvasHeight; j++) {
         ctx.fillStyle = 'white';
         for(let i = 50; i <= intCanvasWidth; i += 100) {
             ctx.fillRect(i, j * 50, 50, 50);
+        }*/
+
+        for(let i = 0; i < intColmsNbr; i++) {
+
+            if(i % 2 == 0) {
+                ctx.fillStyle = 'black';
+            }
+            else {
+                ctx.fillStyle = 'white';
+            }
+
+            ctx.fillRect(i * intCellWidth, j * intCellHeight, 
+                intCellWidth, intCellHeight);
         }
     }
     else {
         // Ligne impaire
 
-        ctx.fillStyle = 'white';
-        // i => l'incrément en X
-        for(let i = 0; i <= intCanvasWidth; i += 100) {
-            ctx.fillRect(i, j * 50, 50, 50);
-        }
+        for(let i = 0; i < intColmsNbr; i++) {
 
-        ctx.fillStyle = 'black';
-        for(let i = 50; i <= intCanvasWidth; i += 100) {
-            ctx.fillRect(i, j * 50, 50, 50);
+            if(i % 2 == 0) {
+                ctx.fillStyle = 'white';
+            }
+            else {
+                ctx.fillStyle = 'black';
+            }
+
+            ctx.fillRect(i * intCellWidth, j * intCellHeight, 
+                intCellWidth, intCellHeight);
         }
     }
 
